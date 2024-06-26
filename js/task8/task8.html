@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8 JS</title>
+</head>
+<body>
+    <style>
+        .form-container {
+            background: rgb(248,252,197);
+            background: linear-gradient(180deg, rgba(248,252,197,1) 35%, rgba(246,169,254,1) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 32px;
+        }
+        input[type=text], input[type=password], input[type=email], input[type=tel], input[type=number], textarea {
+            width: 500px;
+            padding: 4px;
+        }
+        .err {
+            color: red;
+        }
+        .right {
+            float: right;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 12px;
+            border-radius: 32px;
+            background-color: red;
+            color: white;
+            border: none;
+            width: 128px;
+        }
+        .form-err {
+            border: 1px solid red;
+        }
+    </style>
+
+    <div class="form-container">
+        <div class="form-heading">
+            <h1 style="color: darkblue;">Registration form</h1>
+        </div>
+        <div class="form-content">
+            <form action="">
+                <table>
+                    <tr>
+                        <td><label for="fname">First name</label></td>
+                        <td><input type="text" name="fname" id="fnameInput" placeholder="Enter first name"></td>
+                        <td><span id="fnameErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="lname">Last name</label></td>
+                        <td><input type="text" name="lname" id="lnameInput" placeholder="Enter last name"></td>
+                        <td><span id="lnameErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" name="email" id="emailInput" placeholder="Enter email"></td>
+                        <td><span id="emailErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="pwd">Password</label></td>
+                        <td><input type="password" name="pwd" id="pwdInput" placeholder="Enter password"></td>
+                        <td><span id="pwdErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="rePwd">Re Enter Password</label></td>
+                        <td><input type="password" name="rePwd" id="rePwdInput" placeholder="Re-enter password"></td>
+                        <td><span id="rePwdErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="fname">Gender</label></td>
+                        <td>
+                            <div class="radio-item">
+                                <input type="radio" name="genderRadio" id="genderRadiom">
+                                <label for="genderRadio">Male</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="genderRadio" id="genderRadiom">
+                                <label for="genderRadio">Female</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="age">Age</label></td>
+                        <td><input type="number" name="age" id="ageInput" placeholder="Enter age"></td>
+                        <td><span id="ageErr" class="err"></span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="phone">Phone Number</label></td>
+                        <td><input type="tel" name="phone" id="phoneInput" placeholder="Enter number"></td>
+                        <td><span id="phoneErr" class="err"></span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="address">Address</label></td>
+                        <td><textarea name="address" id="addressInput" rows="10" placeholder="Enter address"></textarea></td>
+                        <td><span id="addressErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="state">State</label></td>
+                        <td><input type="text" name="state" id="stateInput" placeholder="Enter state"></td>
+                        <td><span id="stateErr" class="err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="country">Country</label></td>
+                        <td>
+                            <select name="country" id="countryInput">
+                                <option value="India">India</option>
+                                <option value="England">England</option>
+                                <option value="Japan">Japan</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="language">Languages Known</label></td>
+                        <td>
+                            <div class="cbox-grop">
+                                <input type="checkbox" name="languageCbox">
+                                <label for="languageCbox">English</label>
+                            </div>
+                            <div class="cbox-grop">
+                                <input type="checkbox" name="languageCbox">
+                                <label for="languageCbox">Marathi</label>
+                            </div>
+                            <div class="cbox-grop">
+                                <input type="checkbox" name="languageCbox">
+                                <label for="languageCbox">Hindi</label>
+                            </div>
+                            <div class="cbox-grop">
+                                <input type="checkbox" name="languageCbox">
+                                <label for="languageCbox">Kannada</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" name="declartionCbox" id="">
+                            <label for="declartionCbox">Hereby I declare all the given details are true</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="right">
+                            Log in to <a href="">Ehtnus</a> website
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="center" >
+                            <button type="submit" onclick="handleForm()">Register</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script src="task8.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 JS</title>
+</head>
+<body>
+    <style>
+        .form-item {
+            display : flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .error {
+            color: red;
+        }
+        .error-field {
+            border: 1px solid red;
+        }
+    </style>
+
+    <form action="">
+        <div class="form-item">
+            <label for="name">Name : </label>
+            <input type="text" id="nameInput" required placeholder="Enter name">
+            <span class="error" id="nameErr"></span>
+        </div>
+        <div class="form-item">
+            <label for="email">Email : </label>
+            <input type="email" id="emailInput" required placeholder="Enter email">
+            <span class="error" id="emailErr"></span>
+        </div>
+        <div class="form-item">
+            <label for="">Website : </label>
+            <input type="website" id="websiteInput" required placeholder="Enter website.">
+            <span class="error" id="websiteErr"></span>
+        </div>
+        <div class="form-item">
+            <label for="message">Message : </label>
+            <textarea name="message" id="messageInput" required placeholder="Enter message"></textarea>
+            <span class="error" id="messageErr"></span>
+        </div>
+        <button type="submit" onclick="handleForm()">Submit</button>
+    </form>
+    <script src="task5.js"></script>
+</body>
+</html>
